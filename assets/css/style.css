@@ -1092,3 +1092,17 @@ body.active { overflow: hidden; }
     color: black;
   }
 
+@media (max-width: 768px) { 
+  .navbar-link {
+    color: white !important; /* Ensures visibility */
+    font-size: 16px; /* Adjust text size for readability */
+  }
+  
+  .popup-text {
+    color: white; /* Ensures tooltip text is visible */
+    background: rgba(0, 0, 0, 0.8); /* Adds a slight background */
+    padding: 5px;
+    border-radius: 5px;
+  }
+}
+
