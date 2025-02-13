@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQs - AllIntellect</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        body {
+            font-family: "Poppins", sans-serif;
+            background: linear-gradient(135deg, #f4f4f4, #e6e6e6);
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            height: 100vh;
+            margin: 0;
+            padding: 40px 0;
+            overflow: auto;
+        }
+
+        /* Title and Navigation */
+        .faq-header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 15px 0;
+            width: 100%;
+        }
+
+        .faq-header h1 {
+            font-size: 28px;
+            font-weight: 600;
+            color: #222;
+            margin-bottom: 10px;
+        }
+
+        .faq-header nav {
+            font-size: 18px;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #555;
+            font-weight: 500;
+            transition: 0.3s;
+            margin: 0 10px;
+        }
+
+        .nav-link:hover {
+            color: #000;
+        }
+
+        .nav-link.active {
+            font-weight: 600;
+            color: #000;
+            text-decoration: underline;
+        }
+
+        /* FAQ Section */
+        .faq-container {
+            width: 65%;
+            background: rgba(255, 255, 255, 0.6);
+            padding: 25px;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .faq-item {
+            background: rgba(255, 255, 255, 0.8);
+            margin: 10px 0;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: 0.3s;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .faq-item:hover {
+            box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .faq-question {
+            background: #fff;
+            color: #333;
+            padding: 15px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: 0.3s;
+        }
+
+        .faq-question:hover {
+            background: #f9f9f9;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            padding: 0 15px;
+            background: #f4f4f4;
+            color: #555;
+            transition: max-height 0.5s ease-out, padding 0.3s ease-out;
+            font-size: 16px;
+        }
+
+        .faq-answer.open {
+            max-height: 200px;
+            padding: 15px;
+        }
+
+        .arrow {
+            transition: 0.3s;
+        }
+
+        .rotate {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Title and Navigation -->
+    <div class="faq-header">
+        <h1>AllIntellect FAQs</h1>
+        <nav>
+            <a href="https://primekris.github.io/BLOGGY" class="nav-link">Home</a>
+            <a href="#" class="nav-link active">FAQs</a>
+        </nav>
+    </div>
+
+    <div class="faq-container">
+        <h2 style="text-align: center; margin-bottom: 20px; color: #222;">Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+            <div class="faq-question">What is AllIntellect? <span class="arrow">▼</span></div>
+            <div class="faq-answer">AllIntellect is a blog and knowledge hub for coding, tech, and personal growth.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">How can I contact you? <span class="arrow">▼</span></div>
+            <div class="faq-answer">You can reach out via email at pariharhome1212@gmail.com or through our social media links.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">How often is content updated? <span class="arrow">▼</span></div>
+            <div class="faq-answer">New blog posts and resources are added every week to keep content fresh.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Can I contribute to AllIntellect? <span class="arrow">▼</span></div>
+            <div class="faq-answer">Yes! We accept guest contributions related to coding, tech, and self-improvement.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Is AllIntellect free? <span class="arrow">▼</span></div>
+            <div class="faq-answer">Yes, all resources and blogs on AllIntellect are completely free.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">What programming languages do you cover? <span class="arrow">▼</span></div>
+            <div class="faq-answer">We cover Python, C++, JavaScript, SQL, and other essential web development languages.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Can I request topics for blog posts? <span class="arrow">▼</span></div>
+            <div class="faq-answer">Yes! You can send topic requests through our contact page or social media.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Do you offer coding challenges? <span class="arrow">▼</span></div>
+            <div class="faq-answer">Yes! We have weekly coding challenges to help improve problem-solving skills.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">How do I get started with DSA? <span class="arrow">▼</span></div>
+            <div class="faq-answer">Start with our beginner-friendly DSA guide and practice on LeetCode or CodeChef.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Do you provide project ideas? <span class="arrow">▼</span></div>
+            <div class="faq-answer">Yes! We share unique project ideas for beginners to advanced coders.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">What is the best way to practice coding daily? <span class="arrow">▼</span></div>
+            <div class="faq-answer">Solve problems on LeetCode, CodeChef, or HackerRank and build small projects regularly.</div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">How long does it take to become a full-stack developer? <span class="arrow">▼</span></div>
+            <div class="faq-answer">It depends on consistency, but typically 6–12 months with daily practice.</div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">What’s the best way to learn Python for data science? <span class="arrow">▼</span></div>
+            <div class="faq-answer">Start with NumPy, Pandas, and Matplotlib, then move to machine learning with scikit-learn.</div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">What is the difference between Git and GitHub? <span class="arrow">▼</span></div>
+            <div class="faq-answer">Git is a version control system, while GitHub is a platform to host and collaborate on Git repositories.</div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">How can I start freelancing as a developer? <span class="arrow">▼</span></div>
+            <div class="faq-answer">Build a portfolio, create profiles on Fiverr or Upwork, and start applying for small gigs.</div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">Which is better: Python or JavaScript? <span class="arrow">▼</span></div>
+            <div class="faq-answer">It depends on the use case—Python is great for data science and backend, while JavaScript is best for web development.</div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">What is API, and why is it important? <span class="arrow">▼</span></div>
+            <div class="faq-answer">API (Application Programming Interface) allows different applications to communicate and exchange data.</div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">What’s the best way to learn cybersecurity? <span class="arrow">▼</span></div>
+            <div class="faq-answer">Start with networking basics, then learn ethical hacking tools like Kali Linux and Burp Suite.</div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">How do I optimize website performance? <span class="arrow">▼</span></div>
+            <div class="faq-answer">Use lazy loading, optimize images, minify CSS/JS, and leverage caching.</div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">What’s the difference between SQL and NoSQL databases? <span class="arrow">▼</span></div>
+            <div class="faq-answer">SQL databases use structured tables, while NoSQL databases are more flexible and store data as JSON, documents, or graphs.</div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">Can I become a self-taught developer? <span class="arrow">▼</span></div>
+            <div class="faq-answer">Yes! Many successful developers are self-taught through online courses and projects.</div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">What’s the difference between frontend, backend, and full-stack? <span class="arrow">▼</span></div>
+            <div class="faq-answer">Frontend handles the UI, backend manages server logic, and full-stack does both.</div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">How do I become good at problem-solving in coding? <span class="arrow">▼</span></div>
+            <div class="faq-answer">Practice competitive programming, understand algorithms, and break problems into smaller parts.</div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">What are some common web development mistakes? <span class="arrow">▼</span></div>
+            <div class="faq-answer">Ignoring responsiveness, poor SEO, excessive animations, and not optimizing performance.</div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">What’s the best way to learn C++ for beginners? <span class="arrow">▼</span></div>
+            <div class="faq-answer">Start with basic syntax, learn OOP concepts, and practice with competitive programming.</div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">What is cloud computing? <span class="arrow">▼</span></div>
+            <div class="faq-answer">Cloud computing provides remote access to computing resources like storage and databases over the internet.</div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">How do I learn ethical hacking legally? <span class="arrow">▼</span></div>
+            <div class="faq-answer">Take certified ethical hacking (CEH) courses, practice on Hack The Box, and follow legal guidelines.</div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">What is DevOps? <span class="arrow">▼</span></div>
+            <div class="faq-answer">DevOps combines software development and IT operations to improve deployment speed and reliability.</div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">How do I prepare for coding interviews? <span class="arrow">▼</span></div>
+            <div class="faq-answer">Practice DSA, solve problems on LeetCode, and revise system design concepts.</div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">What’s the difference between machine learning and AI? <span class="arrow">▼</span></div>
+            <div class="faq-answer">Machine learning is a subset of AI that uses algorithms to improve automatically from data.</div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">What is the best programming language for game development? <span class="arrow">▼</span></div>
+            <div class="faq-answer">C# (Unity) and C++ (Unreal Engine) are popular for game development.</div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">How can I improve my UI/UX design skills? <span class="arrow">▼</span></div>
+            <div class="faq-answer">Learn design principles, use Figma or Adobe XD, and analyze top websites for inspiration.</div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">What are REST APIs? <span class="arrow">▼</span></div>
+            <div class="faq-answer">REST APIs use HTTP requests to interact with web services, making them flexible and scalable.</div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">How do I host a website for free? <span class="arrow">▼</span></div>
+            <div class="faq-answer">Use GitHub Pages, Netlify, or Vercel to host static websites for free.</div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">What are microservices? <span class="arrow">▼</span></div>
+            <div class="faq-answer">Microservices break an application into small, independent services that communicate via APIs.</div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">How do I build my first portfolio website? <span class="arrow">▼</span></div>
+            <div class="faq-answer">Use HTML, CSS, and JavaScript or a framework like React to showcase your projects and skills.</div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">What is Web 3.0? <span class="arrow">▼</span></div>
+            <div class="faq-answer">Web 3.0 is the next evolution of the internet, integrating blockchain and decentralized applications.</div>
+        </div>
+        
+    </div>
+
+    <script>
+        document.querySelectorAll(".faq-question").forEach((question) => {
+            question.addEventListener("click", () => {
+                const answer = question.nextElementSibling;
+                const arrow = question.querySelector(".arrow");
+                answer.classList.toggle("open");
+                arrow.classList.toggle("rotate");
+            });
+        });
+    </script>
+
+</body>
+</html>
