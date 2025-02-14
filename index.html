@@ -31,10 +31,10 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
-  #robot {
+#robot {
     position: fixed;
     top: 20px;
-    left: -200px; /* Start completely outside */
+    left: -200px;
     background-color: #f8f9fa;
     color: #333;
     padding: 12px 20px;
@@ -2964,32 +2964,45 @@ function updateSubcategories() {
   -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-  <div id="robot">
-    <span class="robot-hand">🤖</span> Hello, Good Morning - From AllIntellect Team
-  </div>
-  <script>
-    window.onload = function() {
-        let robot = document.getElementById("robot");
+<div id="robot">
+    <span class="robot-hand">🤖</span> <span id="greeting-text"></span> - From AllIntellect Team
+</div>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    let robot = document.getElementById("robot");
+    let greetingText = document.getElementById("greeting-text");
 
-        // Step 1: Slide in
-        setTimeout(() => {
-            robot.style.left = "100px";
-            robot.style.opacity = "1";
-        }, 500);
+    let hour = new Date().getHours();
+    let greeting = "Hello";
 
-        // Step 2: Stay for 5 sec
-        setTimeout(() => {
-            robot.style.opacity = "1"; 
-        }, 5500);
+    if (hour >= 5 && hour < 12) {
+        greeting = "Good Morning";
+    } else if (hour >= 12 && hour < 18) {
+        greeting = "Good Afternoon";
+    } else {
+        greeting = "Good Evening";
+    }
 
-        // Step 3: Slide out in 2 sec
-        setTimeout(() => {
-            robot.style.left = "-150px";
-            robot.style.opacity = "0";
-        }, 7500);
-    };
-  </script>
+    greetingText.innerText = greeting;
 
+    // Step 1: Slide in + Show
+    setTimeout(() => {
+        robot.style.left = "20px"; 
+        robot.style.opacity = "1";
+    }, 500);
+
+    // Step 2: Stay for 5 sec
+    setTimeout(() => {
+        robot.style.opacity = "1"; 
+    }, 5500);
+
+    // Step 3: Slide out in 2 sec
+    setTimeout(() => {
+        robot.style.left = "-200px"; 
+        robot.style.opacity = "0";
+    }, 7500);
+});
+    </script>
   
 
 </body>
