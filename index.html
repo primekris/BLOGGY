@@ -30,23 +30,27 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
-#robot {
+<style>
+  #robot {
     position: fixed;
-    top: 20px; 
-    left: -150px; /* Start from outside screen */
+    top: 20px;
+    left: -200px; /* Start completely outside */
     background-color: #f8f9fa;
     color: #333;
-    padding: 10px 15px;
-    border-radius: 10px;
+    padding: 12px 20px;
+    border-radius: 12px;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 16px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
     opacity: 0;
-    transition: left 5s ease, opacity 2s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: left 1s ease-in-out, opacity 1s ease-in-out;
 }
 
 .robot-hand {
-    font-size: 20px;
+    font-size: 22px;
     animation: wave 1s infinite alternate;
 }
 
@@ -54,7 +58,7 @@
     0% { transform: rotate(0deg); }
     100% { transform: rotate(20deg); }
 }
-
+</style>
 </head>
 
 <body>
