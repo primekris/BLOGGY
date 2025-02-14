@@ -2935,6 +2935,94 @@ function updateSubcategories() {
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
+  
+  
+  <!-- Add this inside your <body> tag -->
+<div id="navbar-timer">Time on site: <span id="site-timer">0s</span></div>
+<div id="shake-popup" class="hidden">Time on site: <span id="popup-timer">0s</span></div>
+
+<script>
+    let startTime = Date.now();
+    let lastUpdate = 0;
+    let motionThreshold = 15;
+    let popupTimeout;
+    
+    // Update navbar timer every second
+    setInterval(() => {
+        let elapsedTime = Math.floor((Date.now() - startTime) / 1000);
+        document.getElementById("site-timer").textContent = elapsedTime + "s";
+    }, 1000);
+    
+    // Shake detection
+    window.addEventListener("devicemotion", (event) => {
+        let acc = event.accelerationIncludingGravity;
+        let speed = Math.abs(acc.x) + Math.abs(acc.y) + Math.abs(acc.z);
+        
+        if (speed > motionThreshold && Date.now() - lastUpdate > 1000) {
+            lastUpdate = Date.now();
+            showPopup();
+        }
+    });
+    
+    function showPopup() {
+        let elapsedTime = Math.floor((Date.now() - startTime) / 1000);
+        let popup = document.getElementById("shake-popup");
+        popup.querySelector("#popup-timer").textContent = elapsedTime + "s";
+        popup.classList.remove("hidden");
+        popup.classList.add("fade-in");
+
+        clearTimeout(popupTimeout);
+        popupTimeout = setTimeout(() => {
+            popup.classList.remove("fade-in");
+            popup.classList.add("fade-out");
+            setTimeout(() => popup.classList.add("hidden"), 500);
+        }, 3000);
+    }
+</script>
+
+<style>
+    #navbar-timer {
+        position: fixed;
+        top: 10px;
+        left: 20px;
+        background: rgba(0, 0, 0, 0.7);
+        color: white;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-family: Arial, sans-serif;
+        z-index: 1000;
+    }
+    
+    #shake-popup {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: rgba(0, 0, 0, 0.9);
+        color: white;
+        padding: 15px 30px;
+        border-radius: 10px;
+        font-size: 20px;
+        font-weight: bold;
+        text-align: center;
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+        z-index: 2000;
+    }
+    
+    .fade-in {
+        opacity: 1 !important;
+    }
+    
+    .fade-out {
+        opacity: 0 !important;
+    }
+    
+    .hidden {
+        display: none;
+    }
+</style>
+
 </body>
 
 </html>
