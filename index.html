@@ -2934,7 +2934,40 @@ function updateSubcategories() {
   -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-  
+  <body>
+
+    <!-- Your website content -->
+
+    <!-- Paste here -->
+    <div id="robot" class="robot-container">
+        <span class="robot-hand">🤖</span> <br> Hello, Good Morning - From AllIntellect Team
+    </div>
+
+    <script>
+        window.onload = function() {
+            let robot = document.getElementById("robot");
+
+            // Step 1: Slide in
+            setTimeout(() => {
+                robot.style.left = "100px";
+                robot.style.opacity = "1";
+            }, 500);
+
+            // Step 2: Stay for 5 sec
+            setTimeout(() => {
+                robot.style.opacity = "1"; // Ensures it stays visible
+            }, 5500);
+
+            // Step 3: Slide out in 2 sec
+            setTimeout(() => {
+                robot.style.left = "1px";
+                robot.style.opacity = "0";
+            }, 7500);
+        };
+    </script>
+
+  </body>
+
 </body>
 
 </html>
