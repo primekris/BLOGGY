@@ -34,11 +34,11 @@
 #robot {
     position: fixed;
     top: 50%;
-    left: -150px; /* Start from outside screen */
+    left: -200px; /* Start from outside screen */
     transform: translateY(-50%);
-    background-color: #f8f9fa;
+    background-color: rgba(255, 255, 255, 0.9);
     color: #333;
-    padding: 15px 20px;
+    padding: 10px 15px;
     border-radius: 10px;
     font-weight: bold;
     font-size: 14px;
@@ -48,22 +48,20 @@
     display: flex;
     align-items: center;
     gap: 10px;
+    max-width: 250px;
+    overflow: hidden;
 }
 
 #robot img {
-    width: 50px;
+    width: 80px; /* Adjust size of GIF */
     height: auto;
 }
 
 #robot-text {
-    white-space: normal; /* Allow text to break into multiple lines */
-    max-width: 200px;
+    max-width: 150px;
+    white-space: normal;
+    line-height: 1.3;
 }
-
-@keyframes wave {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(20deg); }
-  }
 </style>
 </head>
 
@@ -2955,7 +2953,10 @@ function updateSubcategories() {
     </div>
   </footer>
 
-
+<div id="robot">
+    <img src="https://media3.giphy.com/media/ISGlFAOrYMjmfnqDJh/giphy.gif?cid=6c09b952l6fcrn9isoluh106rxl16x7ql2e9941zmf5ikch6&ep=v1_internal_gif_by_id&rid=giphy.gif" alt="Robot Waving">
+    <span id="robot-text">Hello! Good Morning - from AllIntellect Team</span>
+</div>
 
 
 
@@ -2970,49 +2971,20 @@ function updateSubcategories() {
   -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-<div id="robot-container">
-    <img src="https://media3.giphy.com/media/ISGlFAOrYMjmfnqDJh/giphy.gif" alt="Robot Waving">
-    <div id="robot-text"></div>
-</div>
+
 <script>
- let robot = document.getElementById("robot");
-    let greetingText = document.getElementById("greeting-text");
-
-    let now = new Date();
-    let hour = now.getHours();
-    let greeting = "Hello";
-
-    console.log("Current Hour:", hour); // Debugging
-
-    if (hour >= 6 && hour < 12) {
-        greeting = "Good Morning";
-    } else if (hour >= 12 && hour < 18) {
-        greeting = "Good Afternoon";
-    } else if (hour >= 18 && hour < 21) {
-        greeting = "Good Evening";
-    } else {
-        greeting = "Good Night"; // 9 PM - 6 AM
-    }
-
-    greetingText.innerText = greeting;
-
-    // Slide in animation
+ window.onload = function() {
     setTimeout(() => {
-        robot.style.left = "20px"; 
+        let robot = document.getElementById("robot");
+        robot.style.left = "20px"; // Slide in
         robot.style.opacity = "1";
-    }, 500);
 
-    // Stay for 5 sec
-    setTimeout(() => {
-        robot.style.opacity = "1"; 
-    }, 5500);
-
-    // Slide out in 2 sec
-    setTimeout(() => {
-        robot.style.left = "-200px"; 
-        robot.style.opacity = "0";
-    }, 7500);
-});
+        setTimeout(() => {
+            robot.style.left = "-200px"; // Slide out
+            robot.style.opacity = "0";
+        }, 5000); // Hide after 5 seconds
+    }, 1000);
+};
    
     </script>
   
