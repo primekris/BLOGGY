@@ -2686,62 +2686,77 @@ The Creative Power of AI and Automation
 
 <!--section contact  -->
         <!-- Dropdown for Selecting Inquiry Type -->
-     <section id="contact" style="text-align: center; padding: 50px; background: #fff; color: #000;">
-    <h2 style="font-size: 28px; font-weight: bold; margin-bottom: 20px;">CONTACT US📩</h2>
-    <form action="https://formsubmit.co/studykrishnawork@gmail.com" method="POST">
-    <!-- ✅ Name is OPTIONAL -->
-    <input type="text" name="name" placeholder="Your Name" required>
+  <section id="contact" style="text-align: center; padding: 50px; background: #fff; color: #000;">
+    <h2 style="font-size: 28px; font-weight: bold; margin-bottom: 20px;">Contact Us</h2>
+    <form action="https://formsubmit.co/studykrishnawork@gmail.com" method="POST" 
+        style="max-width: 400px; margin: auto; display: flex; flex-direction: column; background: #000; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);">
+        
+        <input type="text" name="name" placeholder="Your Name" required 
+            style="margin: 10px 0; padding: 12px; border: none; border-radius: 5px; font-size: 16px; width: 100%; background: #222; color: #fff; outline: none;">
+        
+        <input type="email" name="email" placeholder="Your Email" required 
+            style="margin: 10px 0; padding: 12px; border: none; border-radius: 5px; font-size: 16px; width: 100%; background: #222; color: #fff; outline: none;">
 
-    <input type="email" name="email" placeholder="Your Email" required>
-       <input type="text" name="Phone no" placeholder="Phone no (Optional)" >
+        <!-- Mandatory Dropdown Selection -->
+        <select name="category" required 
+            style="margin: 10px 0; padding: 12px; border: none; border-radius: 5px; font-size: 16px; width: 100%; background: #222; color: #fff; outline: none;">
+            <option value="" disabled selected>Select an Option</option>
+            <option value="Blog">Blog</option>
+            <option value="Contact">Contact</option>
+            <option value="Partnership">Partnership</option>
+            <option value="Collab">Collab</option>
+            <option value="Feedback">Feedback</option>
+        </select>
 
-    <!-- ✅ Main Category (MANDATORY) -->
-    <select name="category" id="category" onchange="showSubOptions()" required>
-        <option value="" disabled selected>Select an Option</option>
-        <option value="Blog">Blog</option>
-        <option value="Contact">Contact</option>
-        <option value="Partnership">Partnership</option>
-        <option value="Collab">Collab</option>
-        <option value="Feedback">Feedback</option>
-    </select>
+        <textarea name="message" placeholder="Your Message" required 
+            style="margin: 10px 0; padding: 12px; border: none; border-radius: 5px; font-size: 16px; width: 100%; background: #222; color: #fff; outline: none; height: 100px;"></textarea>
 
-    <!-- ✅ Subcategory (DYNAMIC) -->
-    <select name="sub-category" id="sub-category" style="display: none;" required></select>
+        <!-- Hidden Inputs for Auto-Reply & Redirect -->
+        <input type="hidden" name="_next" value="https://primekris.github.io/thank-you.html">
+        <input type="hidden" name="_captcha" value="true">
+        <input type="hidden" name="_subject" value="New Contact Form Submission">
 
-    <textarea name="message" placeholder="Your Message" required></textarea>
+        <!-- Auto-Reply Email Content -->
+        <input type="hidden" name="_autoresponse" 
+            value="Thank you for reaching out to us! We've received your message and will get back to you as soon as possible. - AllIntellect Team">
 
-    <!-- ✅ Auto-Reply Enabled -->
-    <input type="hidden" name="_autoresponse" value="Thank you for contacting us! We will reach out ASAP.">
-    <input type="hidden" name="_subject" value="New Contact Form Submission">
-
-    <button type="submit">SUBMIT</button>
-</form>
-
+        <button type="submit" 
+            style="background: linear-gradient(135deg, #000, #333); color: #fff; padding: 12px; border: none; cursor: pointer; border-radius: 5px; font-size: 18px; width: 100%; font-weight: bold; text-transform: uppercase;">
+            Send
+        </button>
+    </form>
+</section>
 <script>
-const options = {
-    "Blog": ["Submission of Blogs", "Problem with Blogs", "Enhancement of Blog" , "Other"],
-    "Contact": ["General Inquiry", "Technical Support", "Business Inquiry", "Other"],
-    "Partnership": ["Sponsorship", "Affiliate Program", "Joint Venture", "Other"],
-    "Collab": ["Editing of Blogs", "Blogs Collaboration", "Project Collaboration", "Other"],
-    "Feedback": ["Website Issue", "Feature Request", "General Feedback", "Other"]
-};
+    document.getElementById("inquiry").addEventListener("change", function() {
+        let subInquiry = document.getElementById("sub-inquiry");
+        subInquiry.innerHTML = ""; // Clear previous options
 
-function showSubOptions() {
-    const category = document.getElementById("category").value;
-    const subCategory = document.getElementById("sub-category");
-    
-    subCategory.innerHTML = "";
-    
-    if (options[category]) {
-        subCategory.style.display = "block";
-        subCategory.innerHTML += `<option value="" disabled selected>Select a Sub-Option</option>`; 
-        options[category].forEach(sub => {
-            subCategory.innerHTML += `<option value="${sub}">${sub}</option>`;
-        });
-    } else {
-        subCategory.style.display = "none";
-    }
-}
+        let selectedOption = this.value;
+        let options = [];
+
+        if (selectedOption === "Blog") {
+            options = ["Submission of Blogs", "Problem with Blogs", "Enhancement of Blog"];
+        } else if (selectedOption === "Contact") {
+            options = ["General Inquiry", "Technical Support", "Other"];
+        } else if (selectedOption === "Partnership") {
+            options = ["Business Inquiry", "Investment", "Collaboration"];
+        } else if (selectedOption === "Collaboration") {
+            options = ["Content Collaboration", "Project Partnership", "Sponsorship"];
+        } else if (selectedOption === "Feedback") {
+            options = ["Website Feedback", "Content Feedback", "Other"];
+
+        }
+
+        if (options.length > 0) {
+            subInquiry.style.display = "block";
+            subInquiry.innerHTML = `<option value="" disabled selected>Select a sub-option</option>`;
+            options.forEach(option => {
+                subInquiry.innerHTML += `<option value="${option}">${option}</option>`;
+            });
+        } else {
+            subInquiry.style.display = "none";
+        }
+    });
 </script>
 
   
