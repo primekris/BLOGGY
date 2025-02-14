@@ -2686,39 +2686,31 @@ The Creative Power of AI and Automation
 
 <!--section contact  -->
         <!-- Dropdown for Selecting Inquiry Type -->
-       <section id="contact" style="text-align: center; padding: 50px; background: #fff; color: #000;">
-    <h2 style="font-size: 28px; font-weight: bold; margin-bottom: 20px;">CONTACT US</h2>
+     <section id="contact" style="text-align: center; padding: 50px; background: #fff; color: #000;">
+    <h2 style="font-size: 28px; font-weight: bold; margin-bottom: 20px;">CONTACT US📩</h2>
     <form action="https://formsubmit.co/studykrishnawork@gmail.com" method="POST" 
         style="max-width: 400px; margin: auto; display: flex; flex-direction: column; background: #000; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);">
         
         <input type="text" name="name" placeholder="Your Name" required 
             style="margin: 10px 0; padding: 12px; border: none; border-radius: 5px; font-size: 16px; width: 100%; background: #222; color: #fff; outline: none;">
+
+       <input type="text" name="Phone no" placeholder="Phone number (OPTIONAL)" 
+            style="margin: 10px 0; padding: 12px; border: none; border-radius: 5px; font-size: 16px; width: 100%; background: #222; color: #fff; outline: none;">
         
         <input type="email" name="email" placeholder="Your Email" required 
             style="margin: 10px 0; padding: 12px; border: none; border-radius: 5px; font-size: 16px; width: 100%; background: #222; color: #fff; outline: none;">
 
-        <!-- Main Dropdown -->
-        <select name="inquiry" id="inquiry" required 
-            style="margin: 10px 0; padding: 12px; border: none; border-radius: 5px; font-size: 16px; width: 100%; background: #222; color: #fff; outline: none;">
-            <option value="" disabled selected>Select an option</option>
-            <option value="Blog">Blog</option>
-            <option value="Contact">Contact</option>
-            <option value="Partnership">Partnership</option>
-            <option value="Collaboration">Collaboration</option>
-            <option value="Feedback">Feedback</option>
-        </select>
-
-        <!-- Sub Dropdown (Hidden by Default) -->
-        <select name="sub-inquiry" id="sub-inquiry" style="display: none; margin: 10px 0; padding: 12px; border: none; border-radius: 5px; font-size: 16px; width: 100%; background: #222; color: #fff; outline: none;">
-        </select>
-
         <textarea name="message" placeholder="Your Message" required 
             style="margin: 10px 0; padding: 12px; border: none; border-radius: 5px; font-size: 16px; width: 100%; background: #222; color: #fff; outline: none; height: 100px;"></textarea>
 
-        <!-- Hidden Inputs for Extra Features -->
+        <!-- Hidden Inputs for Auto-Reply & Redirect -->
         <input type="hidden" name="_next" value="https://primekris.github.io/BLOGGY/thank-you.html">
         <input type="hidden" name="_captcha" value="true">
         <input type="hidden" name="_subject" value="New Contact Form Submission">
+
+        <!-- Auto-Reply Email Content -->
+        <input type="hidden" name="_autoresponse" 
+            value="Thank you for reaching out to us! We've received your message and will get back to you as soon as possible. - AllIntellect Team">
 
         <button type="submit" 
             style="background: linear-gradient(135deg, #000, #333); color: #fff; padding: 12px; border: none; cursor: pointer; border-radius: 5px; font-size: 18px; width: 100%; font-weight: bold; text-transform: uppercase;">
@@ -2726,6 +2718,7 @@ The Creative Power of AI and Automation
         </button>
     </form>
 </section>
+
 
 <script>
     document.getElementById("inquiry").addEventListener("change", function() {
