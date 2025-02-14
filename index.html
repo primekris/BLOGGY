@@ -2968,35 +2968,40 @@ function updateSubcategories() {
     <span class="robot-hand">🤖</span> <span id="greeting-text"></span> - From AllIntellect Team
 </div>
 <script>
-  document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function() {
     let robot = document.getElementById("robot");
     let greetingText = document.getElementById("greeting-text");
 
-    let hour = new Date().getHours();
+    let now = new Date();
+    let hour = now.getHours();
     let greeting = "Hello";
 
-    if (hour >= 5 && hour < 12) {
+    console.log("Current Hour:", hour); // Debugging
+
+    if (hour >= 6 && hour < 12) {
         greeting = "Good Morning";
     } else if (hour >= 12 && hour < 18) {
         greeting = "Good Afternoon";
-    } else {
+    } else if (hour >= 18 && hour < 21) {
         greeting = "Good Evening";
+    } else {
+        greeting = "Good Night"; // 9 PM - 6 AM
     }
 
     greetingText.innerText = greeting;
 
-    // Step 1: Slide in + Show
+    // Slide in animation
     setTimeout(() => {
         robot.style.left = "20px"; 
         robot.style.opacity = "1";
     }, 500);
 
-    // Step 2: Stay for 5 sec
+    // Stay for 5 sec
     setTimeout(() => {
         robot.style.opacity = "1"; 
     }, 5500);
 
-    // Step 3: Slide out in 2 sec
+    // Slide out in 2 sec
     setTimeout(() => {
         robot.style.left = "-200px"; 
         robot.style.opacity = "0";
