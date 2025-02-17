@@ -127,14 +127,18 @@
             <strong class="strong">Hey, we’re AIIntellect.</strong>See our blogs, stories and ideas.
           </h1>
 
-          <div class="wrapper">
-
-            <form action="" class="newsletter-form">
-              <input type="email" name="email_address" placeholder="Your email address" class="email-field">
-
-              <button type="submit" class="btn">Subscribe</button>
-            </form>
-
+                    <div class="wrapper">
+    <form action="https://formsubmit.co/allntellect@outlook.com" method="POST" class="newsletter-form" id="subscribeForm">
+        <input type="email" name="email" placeholder="Your email address" class="email-field" required>
+        <button type="submit" class="btn">Subscribe</button>
+        <input type="hidden" name="_captcha" value="true">
+        <input type="hidden" name="_subject" value="NEW WEBSITE SUBSCRIBER">
+       
+        <!-- Hidden Fields for Auto-Response & Thank You Page -->
+        <input type="hidden" name="_next" value="https://primekris.github.io/BLOGGY/thank-you">
+        <input type="hidden" name="_autoresponse" value="Hey there,Thank you for subscribing to AllIntellect! 🚀✨We’re thrilled to have you on board. Get ready to receive the latest updates, exclusive insights, and valuable content straight to your inbox. Whether it’s about technology, blogging tips, collaborations, or industry trends, we’ve got you covered!Best Regards,Team AllIntellect📩 studykrishnawork@gmail.com🌐 https://primekris.github.io/BLOGGY/">
+    </form>
+</div>
             <p class="newsletter-text">
               Get the email newsletter and unlock access to members-only content and updates
             </p>
