@@ -72,28 +72,58 @@
 <!-- Chatbot Popup -->
 
 <style>
-/* Style for the Chatbot button */
-.chatbot-popup-btn {
-    padding: 10px 20px;        /* Adjust padding */
-    background: #000;          /* Black background */
-    color: #fff;               /* White text */
-    border: none;              /* No border */
-    border-radius: 25px;       /* Rounded corners */
-    cursor: pointer;          /* Pointer cursor on hover */
-    position: fixed;           /* Fixed position on screen */
-    bottom: 20px;              /* Positioned 20px from the bottom */
-    right: 20px;               /* Positioned 20px from the right */
-    z-index: 9999;             /* Make sure it's on top of everything */
-    transition: background 0.3s ease; /* Smooth hover effect */
-    font-size: 16px;           /* Adjust font size */
-}
+    /* Chatbot button popup */
+    #chatbot-popup-btn {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #000;
+        color: #fff;
+        border: none;
+        padding: 15px 25px;
+        border-radius: 50px;
+        font-size: 16px;
+        cursor: pointer;
+        z-index: 1000;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
 
-.chatbot-popup-btn:hover {
-    background: #444;          /* Darken the button color on hover */
-}
+    /* Popup */
+    #chatbot-popup {
+        display: none;
+        position: fixed;
+        bottom: 70px;
+        right: 20px;
+        background-color: #333;
+        color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+        width: 250px;
+    }
 
+    #chatbot-popup p {
+        margin: 0;
+        font-size: 14px;
+    }
 
+    #chatbot-popup-link {
+        display: block;
+        margin-top: 10px;
+        background-color: #000;
+        color: #fff;
+        padding: 10px;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+
+    #chatbot-popup-link:hover {
+        background-color: #444;
+    }
 </style>
+
 
 </head>
 
@@ -3008,9 +3038,6 @@ function updateSubcategories() {
     <span id="robot-text">Welcome to AllIntellect BLOGS – Explore, Learn, and Elevate Your Mind! 🚀 DONT FORGET TO GIVE YOUR FEEDBACK IN CONTACT FORM</span>
 </div>
 
-<button id="chatbot-popup-btn" class="chatbot-popup-btn">
-    Chatbot
-</button>
 
 
   <!-- 
@@ -3040,23 +3067,30 @@ function updateSubcategories() {
    
     </script>
   <!-- Chatbot popup button -->
-<!-- Chatbot Button -->
 
+  <!-- Chatbot Button -->
+<button id="chatbot-popup-btn">Chatbot</button>
 
-
-
-
-
+<!-- Chatbot Popup -->
+<div id="chatbot-popup">
+    <p>Click below to Chat with our Bot</p>
+    <a href="https://primekris.github.io/BLOGGY/chatbot.html" id="chatbot-popup-link">Go to Chatbot</a>
+</div>
 
 <script>
-// Get the chatbot button element
-const chatbotPopupBtn = document.getElementById('chatbot-popup-btn');
+    // Chatbot Button and Popup JS Logic
+    const chatbotButton = document.getElementById('chatbot-popup-btn');
+    const chatbotPopup = document.getElementById('chatbot-popup');
 
-// Redirect to the chatbot page when the button is clicked
-chatbotPopupBtn.addEventListener('click', function() {
-    window.location.href = 'https://primekris.github.io/BLOGGY/chatbot.html';  // Redirect to chatbot.html
-});
+    // Show the popup when the button is clicked
+    chatbotButton.addEventListener('click', function() {
+        chatbotPopup.style.display = 'block';
+    });
 
+    // Optional: Hide the popup after a few seconds
+    setTimeout(() => {
+        chatbotPopup.style.display = 'none';
+    }, 10000); // Hide after 10 seconds (you can adjust or remove this)
 </script>
 
 
