@@ -63,68 +63,6 @@
     line-height: 1.3;
 }
 </style>
-
-  <!-- Chatbot popup button -->
-<button id="chatbot-popup-btn" class="chatbot-popup-btn">
-    Chatbot
-</button>
-
-<!-- Chatbot Popup -->
-
-<style>
-    /* Chatbot button popup */
-    #chatbot-popup-btn {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        background-color: #000;
-        color: #fff;
-        border: none;
-        padding: 15px 25px;
-        border-radius: 50px;
-        font-size: 16px;
-        cursor: pointer;
-        z-index: 1000;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    /* Popup */
-    #chatbot-popup {
-        display: none;
-        position: fixed;
-        bottom: 70px;
-        right: 20px;
-        background-color: #333;
-        color: #fff;
-        padding: 20px;
-        border-radius: 5px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        z-index: 1000;
-        width: 250px;
-    }
-
-    #chatbot-popup p {
-        margin: 0;
-        font-size: 14px;
-    }
-
-    #chatbot-popup-link {
-        display: block;
-        margin-top: 10px;
-        background-color: #000;
-        color: #fff;
-        padding: 10px;
-        text-align: center;
-        text-decoration: none;
-        border-radius: 5px;
-    }
-
-    #chatbot-popup-link:hover {
-        background-color: #444;
-    }
-</style>
-
-
 </head>
 
   
@@ -180,7 +118,7 @@
           <span class="span three"></span>
         </button>
 
-        <a href="https://primekris.github.io/MEMESHARINGWEB" class="btn">Join</a>
+        <a href="https://primekris.github.io/BLOGGY/chatbot.html" class="btn">🤖Chatbot</a>
 
       </div>
 
@@ -3066,32 +3004,7 @@ function updateSubcategories() {
 };
    
     </script>
-  <!-- Chatbot popup button -->
 
-  <!-- Chatbot Button -->
-<button id="chatbot-popup-btn">Chatbot</button>
-
-<!-- Chatbot Popup -->
-<div id="chatbot-popup">
-    <p>Click below to Chat with our Bot</p>
-    <a href="https://primekris.github.io/BLOGGY/chatbot.html" id="chatbot-popup-link">Go to Chatbot</a>
-</div>
-
-<script>
-    // Chatbot Button and Popup JS Logic
-    const chatbotButton = document.getElementById('chatbot-popup-btn');
-    const chatbotPopup = document.getElementById('chatbot-popup');
-
-    // Show the popup when the button is clicked
-    chatbotButton.addEventListener('click', function() {
-        chatbotPopup.style.display = 'block';
-    });
-
-    // Optional: Hide the popup after a few seconds
-    setTimeout(() => {
-        chatbotPopup.style.display = 'none';
-    }, 10000); // Hide after 10 seconds (you can adjust or remove this)
-</script>
 
 
 </body>
