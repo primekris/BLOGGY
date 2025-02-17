@@ -32,7 +32,7 @@
         <div id="options-container"></div>
     </div>
 
-    <script>
+  <script>
         let conversation = {
             "start": [
                 "Hello! Welcome to AllIntellect. We're here to assist you with tech and business topics. You can reach us anytime at <b>allntellect@outlook.com</b>. What would you like to know about?", 
@@ -41,66 +41,155 @@
                     { text: "Contact", next: "contact" },
                     { text: "Partnership", next: "partnership" },
                     { text: "What is AllIntellect", next: "what is allintellect" },
-                    { text: "Collaboration", next: "collaboration" }
+                    { text: "Collaboration", next: "collaboration" },
+                    { text: "End the Conversation", next: "end_conversation" }
                 ]
             ],
             "blog": [
                 "We cover various tech and business topics. Do you want recommendations?", 
                 [
                     { text: "AI & Automation Blogs", next: "ai & automation blogs" },
-                    { text: "Cybersecurity Blogs", next: "cybersecurity blogs" }
+                    { text: "Cybersecurity Blogs", next: "cybersecurity blogs" },
+                    { text: "End the Conversation", next: "end_conversation" }
                 ]
             ],
             "ai & automation blogs": [
                 "Here are some blogs on AI and Automation: ",
                 [
-                    { text: "AI Blog 1", url: "https://primekris.github.io/BLOGGY/BLOG1" },
-                    { text: "AI Blog 2", url: "https://primekris.github.io/BLOGGY/BLOG8" },
-                    { text: "More AI Blogs", url: "https://primekris.github.io/BLOGGY/BLOG9" }
+                    { text: "Creative AI Tools for Content Creation", url: "https://primekris.github.io/BLOGGY/BLOG1" },
+                    { text: "AI & Automation: Unleashing Creativity and Efficiency", url: "https://primekris.github.io/BLOGGY/BLOG8" },
+                    { text: "AI: Striking the Balance Between Innovation and Ethics", url: "https://primekris.github.io/BLOGGY/BLOG9" },
+                    { text: "Shaping Tomorrow: AI and Automation's Impact", url: "https://primekris.github.io/BLOGGY/BLOG10" },
+                    { text: "AI & Automation: Transforming Job Markets and Careers", url: "https://primekris.github.io/BLOGGY/BLOG11" },
+                    { text: "Education Reimagined: AI & Automation in Learning", url: "https://primekris.github.io/BLOGGY/BLOG12" },
+                    { text: "End the Conversation", next: "end_conversation" }
                 ]
             ],
             "cybersecurity blogs": [
                 "Here are some blogs on Cybersecurity: ",
                 [
-                    { text: "Cybersecurity Blog 1", url: "https://primekris.github.io/BLOGGY/BLOG2" },
-                    { text: "Cybersecurity Blog 2", url: "https://primekris.github.io/BLOGGY/BLOG7" },
-                    { text: "More Cybersecurity Blogs", url: "https://primekris.github.io/BLOGGY/BLOG3" }
+                    { text: "IoT Security: The Silent Risk in Our Homes", url: "https://primekris.github.io/BLOGGY/BLOG2" },
+                    { text: "Why Cybersecurity and Privacy Matter in Today's World", url: "https://primekris.github.io/BLOGGY/BLOG3" },
+                    { text: "Deepfakes: A Growing Threat to Cybersecurity", url: "https://primekris.github.io/BLOGGY/BLOG4" },
+                    { text: "Ransomware: Prevention and Protection Strategies", url: "https://primekris.github.io/BLOGGY/BLOG5" },
+                    { text: "Securing the Internet of Things: Emerging Cyber Threats", url: "https://primekris.github.io/BLOGGY/BLOG6" },
+                    { text: "Social Engineering: The Hidden Cybersecurity Threat", url: "https://primekris.github.io/BLOGGY/BLOG7" },
+                    { text: "End the Conversation", next: "end_conversation" }
                 ]
             ],
             "contact": [
-                "You can reach us anytime at <b>allntellect@outlook.com</b>. Need more info?", 
+                "We offer different types of contact. Please select the one you're interested in:", 
                 [
-                    { text: "Yes", url: "mailto:allntellect@outlook.com" },
-                    { text: "No", next: "thank_you" }
+                    { text: "General Inquiries", next: "general_inquiries" },
+                    { text: "Technical Support", next: "technical_support" },
+                    { text: "Business Queries", next: "business_queries" },
+                    { text: "Partnership Requests", next: "partnership_requests" },
+                    { text: "End the Conversation", next: "end_conversation" }
+                ]
+            ],
+            "general_inquiries": [
+                "For general inquiries, please reach out to us at <b>allntellect@outlook.com</b>. How else can we help?",
+                [
+                    { text: "Back to Contact", next: "contact" },
+                    { text: "End the Conversation", next: "end_conversation" }
+                ]
+            ],
+            "technical_support": [
+                "For technical support, please contact us at <b>allntellect@outlook.com</b>. How else can we assist you?",
+                [
+                    { text: "Back to Contact", next: "contact" },
+                    { text: "End the Conversation", next: "end_conversation" }
+                ]
+            ],
+            "business_queries": [
+                "For business-related queries, feel free to contact us at <b>allntellect@outlook.com</b>. What else do you need help with?",
+                [
+                    { text: "Back to Contact", next: "contact" },
+                    { text: "End the Conversation", next: "end_conversation" }
                 ]
             ],
             "partnership": [
-                "We love collaborating! What type of partnership are you looking for? Contact us at <b>allntellect@outlook.com</b>.", 
+                "We offer several types of partnerships. What kind are you interested in?",
                 [
-                    { text: "Sponsorship", url: "mailto:allntellect@outlook.com" },
-                    { text: "Content Collaboration", url: "mailto:allntellect@outlook.com" },
-                    { text: "Marketing", url: "mailto:allntellect@outlook.com" }
+                    { text: "Sponsorship", next: "sponsorship" },
+                    { text: "Content Collaboration", next: "content_collaboration" },
+                    { text: "Marketing", next: "marketing" },
+                    { text: "End the Conversation", next: "end_conversation" }
+                ]
+            ],
+            "sponsorship": [
+                "Interested in sponsorship? Please reach out to us at <b>allntellect@outlook.com</b>. How else can we assist?",
+                [
+                    { text: "Back to Partnership", next: "partnership" },
+                    { text: "End the Conversation", next: "end_conversation" }
+                ]
+            ],
+            "content_collaboration": [
+                "For content collaboration, please contact <b>allntellect@outlook.com</b>. What else can we do for you?",
+                [
+                    { text: "Back to Partnership", next: "partnership" },
+                    { text: "End the Conversation", next: "end_conversation" }
+                ]
+            ],
+            "marketing": [
+                "For marketing inquiries, please contact <b>allntellect@outlook.com</b>. Is there anything else you need?",
+                [
+                    { text: "Back to Partnership", next: "partnership" },
+                    { text: "End the Conversation", next: "end_conversation" }
                 ]
             ],
             "what is allintellect": [
-                "AllIntellect is a platform for knowledge sharing. Want to learn more? Contact us at <b>allntellect@outlook.com</b>.", 
+                "AllIntellect is a platform for knowledge sharing. Want to learn more?",
                 [
-                    { text: "Mission", url: "mailto:allntellect@outlook.com" },
-                    { text: "Services", url: "mailto:allntellect@outlook.com" }
+                    { text: "Mission", next: "mission" },
+                    { text: "Services", next: "services" },
+                    { text: "End the Conversation", next: "end_conversation" }
+                ]
+            ],
+            "mission": [
+                "Our mission is to promote continuous learning and innovation across all fields of knowledge. Interested in something else?",
+                [
+                    { text: "Back to What is AllIntellect", next: "what is allintellect" },
+                    { text: "End the Conversation", next: "end_conversation" }
+                ]
+            ],
+            "services": [
+                "We offer various services such as content creation, technical consultation, and partnerships. Need more information?",
+                [
+                    { text: "Back to What is AllIntellect", next: "what is allintellect" },
+                    { text: "End the Conversation", next: "end_conversation" }
                 ]
             ],
             "collaboration": [
-                "We collaborate with bloggers and brands. Are you a business or individual? Reach out to us at <b>allntellect@outlook.com</b>.", 
+                "We collaborate with bloggers and brands. Are you a business or individual?",
                 [
-                    { text: "Business", url: "mailto:allntellect@outlook.com" },
-                    { text: "Individual", url: "mailto:allntellect@outlook.com" }
+                    { text: "Business", next: "business_collaboration" },
+                    { text: "Individual", next: "individual_collaboration" },
+                    { text: "End the Conversation", next: "end_conversation" }
                 ]
             ],
-            "thank_you": [
-                "Thank you for contacting us! We appreciate your time and interest. For more assistance, feel free to reach out to <b>allntellect@outlook.com</b>."
+            "business_collaboration": [
+                "For business collaborations, please contact us at <b>allntellect@outlook.com</b>. How can we assist further?",
+                [
+                    { text: "Back to Collaboration", next: "collaboration" },
+                    { text: "End the Conversation", next: "end_conversation" }
+                ]
+            ],
+            "individual_collaboration": [
+                "For individual collaborations, reach out to <b>allntellect@outlook.com</b>. What else can we help with?",
+                [
+                    { text: "Back to Collaboration", next: "collaboration" },
+                    { text: "End the Conversation", next: "end_conversation" }
+                ]
+            ],
+            "end_conversation": [
+                "Thank you for reaching out to AllIntellect! We hope you found everything you were looking for. If you need further assistance, don't hesitate to contact us at <b>allntellect@outlook.com</b>. Have a wonderful day!",
+                [
+                    { text: "Home Page", url: "https://primekris.github.io/BLOGGY" }
+                ]
             ]
         };
-
+    
         function displayMessage(type, message) {
             let chatbox = document.getElementById("chatbox");
             let msgDiv = document.createElement("div");
@@ -109,7 +198,7 @@
             chatbox.appendChild(msgDiv);
             chatbox.scrollTop = chatbox.scrollHeight;
         }
-
+    
         function displayOptions(options) {
             let optionsContainer = document.getElementById("options-container");
             optionsContainer.innerHTML = "";
@@ -125,7 +214,7 @@
                 optionsContainer.appendChild(btn);
             });
         }
-
+    
         function handleOption(option) {
             displayMessage("user", option);
             if (conversation[option]) {
@@ -138,14 +227,15 @@
                 }
             }
         }
-
+    
         function startChat() {
             document.getElementById("chatbox").innerHTML = "";  // Clear chatbox
             displayMessage("bot", "Hello! Welcome to AllIntellect. We're here to assist you with tech and business topics. You can reach us anytime at <b>allntellect@outlook.com</b>. What would you like to know about?");
             displayOptions(conversation["start"][1]);
         }
-
+    
         startChat();
     </script>
+       
 </body>
 </html>
