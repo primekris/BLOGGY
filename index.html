@@ -72,22 +72,24 @@
 <!-- Chatbot Popup -->
 
 <style>
+/* Style for the Chatbot button */
 .chatbot-popup-btn {
-    padding: 10px 20px;
-    background: #000;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    position: fixed;
-    bottom: 20px;  /* 20px from the bottom */
-    right: 20px;   /* 20px from the right */
-    z-index: 999;  /* Makes sure it's always on top */
-    transition: background 0.3s;
+    padding: 10px 20px;        /* Adjust padding */
+    background: #000;          /* Black background */
+    color: #fff;               /* White text */
+    border: none;              /* No border */
+    border-radius: 25px;       /* Rounded corners */
+    cursor: pointer;          /* Pointer cursor on hover */
+    position: fixed;           /* Fixed position on screen */
+    bottom: 20px;              /* Positioned 20px from the bottom */
+    right: 20px;               /* Positioned 20px from the right */
+    z-index: 9999;             /* Make sure it's on top of everything */
+    transition: background 0.3s ease; /* Smooth hover effect */
+    font-size: 16px;           /* Adjust font size */
 }
 
 .chatbot-popup-btn:hover {
-    background: #444;  /* Change the color on hover */
+    background: #444;          /* Darken the button color on hover */
 }
 
 
@@ -3036,8 +3038,9 @@ function updateSubcategories() {
    
     </script>
   <!-- Chatbot popup button -->
+<!-- Chatbot Button -->
 <button id="chatbot-popup-btn" class="chatbot-popup-btn">
-    🤖Chatbot
+    Chatbot
 </button>
 
 
@@ -3046,21 +3049,14 @@ function updateSubcategories() {
 
 
 <script>
-    // Show the popup when clicking the chatbot button
-    const popupButton = document.getElementById("chatbot-popup-btn");
-    const popup = document.getElementById("chatbot-popup");
+// Get the chatbot button element
+const chatbotPopupBtn = document.getElementById('chatbot-popup-btn');
 
-    popupButton.onclick = function () {
-        // Toggle visibility of the popup
-        popup.style.display = popup.style.display === "block" ? "none" : "block";
-    };
+// Redirect to the chatbot page when the button is clicked
+chatbotPopupBtn.addEventListener('click', function() {
+    window.location.href = 'https://primekris.github.io/BLOGGY/chatbot.html';  // Redirect to chatbot.html
+});
 
-    // Close the popup if clicked outside
-    window.onclick = function (event) {
-        if (event.target !== popupButton && event.target !== popup) {
-            popup.style.display = "none";
-        }
-    };
 </script>
 
 
