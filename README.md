@@ -54,7 +54,7 @@ Feel free to **fork** this repository and submit a pull request if you'd like to
 
 ## 📩 Contact
 📧 **Email:** allntellect@outlook.com
-🐙 **GitHub:** [PrimeKris1](https://github.com/PrimeKris)
+🐙 **GitHub:** [PrimeKris](https://github.com/PrimeKris)
 
 ---
 💡 _"AllIntellect - Where Ideas Come to Life."_ 🚀
