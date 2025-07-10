@@ -57,3 +57,45 @@ const toggleSearchBar = function () {
 }
 
 addEventOnElem(searchTogglers, "click", toggleSearchBar);
+
+
+// ...your existing code above...
+
+// Telegram upload form code here 👇
+const uploadForm = document.getElementById("uploadForm");
+
+if (uploadForm) {
+  uploadForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const fileInput = document.getElementById("fileInput");
+    if (!fileInput.files.length) {
+      alert("⚠️ Please select a file.");
+      return;
+    }
+
+    const formData = new FormData();
+    formData.append("file", fileInput.files[0]);
+
+    const backendURL = "https://telegram-file-uploader-hy9e.onrender.com/upload";
+
+    try {
+      const response = await fetch(backendURL, {
+        method: "POST",
+        body: formData,
+      });
+
+      const result = await response.json();
+
+      if (result.status === "success") {
+        alert("✅ File sent to Telegram!");
+        uploadForm.reset();
+      } else {
+        alert("❌ Upload failed.");
+      }
+    } catch (err) {
+      console.error(err);
+      alert("❌ Something went wrong.");
+    }
+  });
+  }
