@@ -63,6 +63,7 @@ addEventOnElem(searchTogglers, "click", toggleSearchBar);
 
 // Telegram upload form code here 👇
 const uploadForm = document.getElementById("uploadForm");
+const toast = document.getElementById("toast");
 
 if (uploadForm) {
   uploadForm.addEventListener("submit", async (e) => {
@@ -70,7 +71,7 @@ if (uploadForm) {
 
     const fileInput = document.getElementById("fileInput");
     if (!fileInput.files.length) {
-      alert("⚠️ Please select a file.");
+      showToast("⚠️ Please select a file");
       return;
     }
 
@@ -80,22 +81,38 @@ if (uploadForm) {
     const backendURL = "https://telegram-file-uploader-hy9e.onrender.com/upload";
 
     try {
-      const response = await fetch(backendURL, {
+      const res = await fetch(backendURL, {
         method: "POST",
         body: formData,
       });
 
-      const result = await response.json();
+      const result = await res.json();
 
       if (result.status === "success") {
-        alert("✅ File sent to Telegram!");
+        showToast("✅ File sent to Telegram!");
         uploadForm.reset();
       } else {
-        alert("❌ Upload failed.");
+        showToast("❌ Upload failed.");
       }
     } catch (err) {
       console.error(err);
-      alert("❌ Something went wrong.");
+      showToast("❌ Something went wrong.");
     }
   });
-  }
+}
+
+function showToast(message) {
+  toast.textContent = message;
+  toast.style.visibility = "visible";
+  toast.style.opacity = "1";
+  toast.style.bottom = "50px";
+
+  setTimeout(() => {
+    toast.style.opacity = "0";
+    toast.style.bottom = "30px";
+    setTimeout(() => {
+      toast.style.visibility = "hidden";
+    }, 500);
+  }, 3000);
+}
+
